@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .present {
+            background-color: #28a745;
+            color: white;
+        }
+        .absent {
+            background-color: #dc3545;
+            color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Attendance</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="attendance-body">
+                <tr>
+                    <td>Hashwand </td>
+                    <td><button class="present" onclick="markAttendance(this, 'Present')">Present</button> <button class="absent" onclick="markAttendance(this, 'Absent')">Absent</button></td>
+                </tr>
+                <tr>
+                    <td>Dharan
+                    </td>
+                    <td><button class="present" onclick="markAttendance(this, 'Present')">Present</button> <button class="absent" onclick="markAttendance(this, 'Absent')">Absent</button></td>
+                </tr>
+                <tr>
+                    <td>Abisha</td>
+                    <td><button class="present" onclick="markAttendance(this, 'Present')">Present</button> <button class="absent" onclick="markAttendance(this, 'Absent')">Absent</button></td>
+                </tr>
+                <tr>
+                    <td>pushpa latha</td>
+                    <td><button class="present" onclick="markAttendance(this, 'Present')">Present</button> <button class="absent" onclick="markAttendance(this, 'Absent')">Absent</button></td>
+                </tr>
+                <tr>
+                    <td>venu priya</td>
+                    <td><button class="present" onclick="markAttendance(this, 'Present')">Present</button> <button class="absent" onclick="markAttendance(this, 'Absent')">Absent</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function markAttendance(button, status) {
+            let cell = button.parentNode;
+            cell.innerHTML = status;
+            cell.style.fontWeight = "bold";
+            cell.style.color = status === 'Present' ? "green" : "red";
+        }
+    </script>
+</body>
+</html>
